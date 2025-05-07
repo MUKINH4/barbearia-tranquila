@@ -1,0 +1,10 @@
+﻿@model AgendarModel
+
+<h2>Editar Agendamento</h2>
+
+<form asp-action="Edit" method="post">
+    @Html.HiddenFor(model => model.Id)
+    <partial name="_Form" />
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a asp-action="Agendamentos" class="btn btn-secondary">Cancelar</a>
+</form>

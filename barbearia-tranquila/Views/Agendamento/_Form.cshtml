@@ -1,0 +1,48 @@
+﻿@model AgendarModel
+
+<div class="card shadow-sm border-0">
+    <div class="card-body">
+        <input asp-for="Id" type="hidden" />
+
+        <div class="mb-3">
+            <label for="Nome" class="form-label fw-bold">Nome:</label>
+            <input type="text" class="form-control shadow-sm" id="Nome" name="Nome" value="@Model.Nome" placeholder="Digite o nome" required />
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(m => m.Telefone, new { @class = "form-label fw-bold" })
+            @Html.TextBoxFor(m => m.Telefone, new { @class = "form-control shadow-sm", placeholder = "(15) 12345-6789" })
+            @Html.ValidationMessageFor(m => m.Telefone, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="Data" class="form-label fw-bold">Data:</label>
+                <input type="date" class="form-control shadow-sm" id="Data" name="Data" value="@Model.Data.ToString("yyyy-MM-dd")" required />
+            </div>
+            <div class="col-md-6">
+                <label for="Hora" class="form-label fw-bold">Hora:</label>
+                <input type="time" class="form-control shadow-sm" id="Hora" name="Hora" value="@Model.Hora.ToString(@"hh\:mm")" required />
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Servico" class="form-label fw-bold">Serviço:</label>
+            <select asp-for="Servico" class="form-select shadow-sm" id="Servico" name="Servico" required
+                    asp-items="@Html.GetEnumSelectList<AgendarModel.Servicos>()">
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Profissional" class="form-label fw-bold">Profissional:</label>
+            <select asp-for="Profissional" class="form-select shadow-sm" id="Profissional" name="Profissional" required
+                    asp-items="@Html.GetEnumSelectList<AgendarModel.Profissionais>()">
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="Observacoes" class="form-label fw-bold">Observações:</label>
+            <textarea class="form-control shadow-sm" id="Observacoes" name="Observacoes" rows="3" placeholder="Adicione observações">@Model.Observacoes</textarea>
+        </div>
+    </div>
+</div>

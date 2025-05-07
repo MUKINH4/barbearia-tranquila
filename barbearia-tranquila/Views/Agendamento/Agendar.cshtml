@@ -1,0 +1,16 @@
+﻿@model AgendarModel
+
+@{
+    ViewData["Title"] = "Agendamento";
+}
+
+<h2>@ViewData["Title"]</h2>
+<mensagem texto="@TempData["msg"]"></mensagem>
+<form asp-action="Agendar" method="post">
+    
+    <partial name="_Form" />
+    <div class="d-flex justify-content-around mt-3">
+        <botao cor="btn-success"></botao>
+	    <a asp-action="Agendamentos" class="btn btn-outline-dark">Ver Agendamentos</a>
+    </div>
+</form>
