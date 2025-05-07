@@ -9,7 +9,7 @@ Bem-vindo ao projeto **Barbearia Tranquila**, um sistema de agendamento online p
 # 👥 **Integrantes**
 * Samuel Heitor - RM 556731
 * Renato David - RM 555627
-* Lucas Nicolini - RIM 55/613
+* Lucas Nicolini - RIM 557613
 * Gustavo Lopes - RM 556859
 * Gabriel Jablonski - RM 555452
 * Matheus Munuera - RM 557812
